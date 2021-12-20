@@ -1,6 +1,9 @@
 package ru.suvorov.learnup.hl3;
 
-class Player {
+import java.io.Serializable;
+import java.util.Arrays;
+
+class Player implements Serializable {
     private final String name;
     private int health;
     private int armor;
@@ -17,6 +20,19 @@ class Player {
         this.kills = 0;
         this.deaths = 0;
         this.level = 1;
+    }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "name='" + name + '\'' +
+                ", health=" + health +
+                ", armor=" + armor +
+                ", weapon=" + Arrays.toString(weapon) +
+                ", kills=" + kills +
+                ", deaths=" + deaths +
+                ", level=" + level +
+                '}';
     }
 
     public String getName() {
